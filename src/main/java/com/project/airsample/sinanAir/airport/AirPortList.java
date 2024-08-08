@@ -9,7 +9,8 @@ public class AirPortList {
     private ArrayList<Airport> airports = new ArrayList<Airport>();
 
     public ArrayList<Airport> getAirports() {
-        return  airports;
+
+        return airports;
     }
 
     public void addAirport(Airport airport) {
