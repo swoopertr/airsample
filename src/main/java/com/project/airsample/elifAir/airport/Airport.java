@@ -1,4 +1,4 @@
-package com.project.airsample.elifAir.TicketRelated;
+package com.project.airsample.elifAir.airport;
 
 import com.project.airsample.elifAir.IAdvantageProgram;
 import org.springframework.stereotype.Component;
@@ -69,7 +69,33 @@ public class Airport implements IAdvantageProgram {
         this.code = code;
     }
 
-    public int counterElif() {
-        return advantageProgram.hashCode();
+    //DB processes
+    public Airport getById(int id){
+        //todo: get airport data from db by id.
+        return new Airport();
     }
+
+    public boolean insertDb(Airport airport){
+        //todo: insert into db with given airport parameter
+        return true;
+    }
+
+    public boolean updateDb(Airport airport){
+        //todo : update into db with given aiarport parameter.
+        return true;
+    };
+//
+
+    public Airport deleteDB(int id){
+        //todo:delete airport with given airport parameter.
+        return new Airport();
+    }
+
+    @Override
+    public int counter() {
+        return 0;
+    }
+
+    //get list
+
 }

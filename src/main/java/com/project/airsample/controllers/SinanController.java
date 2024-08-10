@@ -17,8 +17,8 @@ public class SinanController {
         return  "SinanAir is active";
     }
 
-    @Autowired
-    private AirPortList airports;
+    /*@Autowired
+    private AirPortList gokalpAirports;
 
     private AirPortList airports2;
 
@@ -29,7 +29,7 @@ public class SinanController {
 
     @GetMapping("/airport")
     public ArrayList<Airport> getAirport() {
-        return airports.getAirports();
+        return gokalpAirports.getAirports();
     }
     @GetMapping("/airport2")
     public ArrayList<Airport> getAirport2() {
@@ -38,7 +38,7 @@ public class SinanController {
 
     @PostMapping("/airport")
     public Airport addAirport(@RequestBody Airport airport){
-        airports.addAirport(airport);
+        gokalpAirports.addAirport(airport);
         return  airport;
-    }
+    }*/
 }

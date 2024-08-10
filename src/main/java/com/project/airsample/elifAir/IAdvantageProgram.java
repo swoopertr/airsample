@@ -7,9 +7,5 @@ import static com.project.airsample.elifAir.enums.AdvantageProgram.NonAdvantage;
 
 public interface IAdvantageProgram {
 
-    AdvantageProgram advantageProgram = NonAdvantage;
-
-    public default int counter() {
-        return 0;
-    }
+    int counter();
 }

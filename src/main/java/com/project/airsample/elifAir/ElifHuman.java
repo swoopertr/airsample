@@ -34,4 +34,9 @@ public class ElifHuman implements IAdvantageProgram{
     public void setBirtdate(Date birtdate) {
         this.birthdate = birtdate;
     }
+
+    @Override
+    public int counter() {
+        return 0;
+    }
 }
