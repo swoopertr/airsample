@@ -1,11 +1,12 @@
-package com.project.airsample.elifAir;
+package com.project.airsample.elifAir.plane;
 
+import com.project.airsample.elifAir.airport.Airport;
 import com.project.airsample.elifAir.enums.Manufacturer;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-@Component
+@Component("elifPlane")
 public class Plane {
 
     private String model;
@@ -112,7 +113,6 @@ public class Plane {
         this.emergencyExitCount = emergencyExitCount;
     }
 
-
     public long getTotalFlightTime() {
         return totalFlightTime;
     }
@@ -129,9 +129,40 @@ public class Plane {
         this.aisleCount = aisleCount;
     }
 
-
     // uçağın toplamda kaç saat uçtuğunu takip etmek için. 10.000 saatten sonra bakım gerekir vs. bilgisi lazım olabilir.
     public void addFlightTime(long flighttime) {
         this.totalFlightTime = ++flighttime;
     }
+
+    //DB processes
+    public Plane getById(int id){
+        //todo: get Plane data from db by id.
+        return new Plane();
+    }
+
+    public boolean insertDb(Plane plane){
+        //todo: insert into db with given Plane parameter
+        return true;
+    }
+
+    public boolean updateDb(Plane plane){
+        //todo : update into db with given Plane parameter.
+        return true;
+    };
+
+
+    public Plane deleteDb(int id){
+        //todo:delete airport with given airport parameter.
+        return new Plane();
+    }
+
+
+//    @Override
+//    public int counter() {
+//        return 0;
+//    }
+
+
+
+
 }
