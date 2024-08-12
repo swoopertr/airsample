@@ -1,9 +1,10 @@
 package com.project.airsample.airEgo.Classes.Alive;
 import com.project.airsample.airEgo.Interfaces.IPersonel;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Component("egoPersonal")
 public class Personel implements IPersonel {
     private Long id;
     private String name;

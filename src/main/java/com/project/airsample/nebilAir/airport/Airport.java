@@ -2,7 +2,7 @@ package com.project.airsample.nebilAir.airport;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("airportNebil")
 public class Airport {
     private String name;
     private String city;

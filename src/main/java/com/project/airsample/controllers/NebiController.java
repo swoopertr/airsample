@@ -18,9 +18,7 @@ public class NebiController {
     }
 
 
-    @Autowired
-    @Qualifier("nebiHuman")
-    private IAdvantageProgram object;
+
 
 
 }

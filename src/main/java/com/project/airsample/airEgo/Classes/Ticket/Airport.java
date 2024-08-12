@@ -1,10 +1,12 @@
 package com.project.airsample.airEgo.Classes.Ticket;
 
 import com.project.airsample.airEgo.Interfaces.IAirport;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component("airportEgo")
 public class Airport implements IAirport {
     private Long id;
     private String name;

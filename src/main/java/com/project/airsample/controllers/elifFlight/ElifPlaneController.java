@@ -1,7 +1,8 @@
 package com.project.airsample.controllers.elifFlight;
 
+import com.project.airsample.elifAir.plane.IPlane;
+import com.project.airsample.elifAir.plane.IPlaneList;
 import com.project.airsample.elifAir.plane.Plane;
-import com.project.airsample.elifAir.plane.PlaneList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,12 +22,6 @@ public class ElifPlaneController {
     @Autowired
     @Qualifier("elifPlanelist")
     private IPlaneList elifPlaneList;
-    
-
-    @GetMapping("/list")
-    public PlaneList getElifPlaneList(){
-        return elifPlaneList;
-    }
 
     @GetMapping("{id}")
     public Plane getElifPlanebyId(@RequestParam int id){
