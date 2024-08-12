@@ -25,11 +25,11 @@ public class FlightDirections {
 
     //Getters and setter
 
-    public int getAirPortCodeArrival() {
+    public String getAirPortCodeArrival() {
         return Arrival.getCode();
     }
 
-    public int getAirPortCodeDeparture() {
+    public String  getAirPortCodeDeparture() {
 
         return Departure.getCode();
     }

@@ -1,39 +1,74 @@
 package com.project.airsample.airEgo.Classes.Alive;
+import com.project.airsample.airEgo.Interfaces.IPersonel;
 
-import com.project.airsample.airEgo.Enums.BloodType;
-import com.project.airsample.airEgo.Enums.Proffesion;
-import org.springframework.stereotype.Component;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.Date;
+public class Personel implements IPersonel {
+    private Long id;
+    private String name;
+    private String position;
 
+    private static List<Personel> personelList = new ArrayList<>();
 
-@Component
-public class Personel extends Human {
-    private Proffesion proffesion;
-
-
-    //Constructer
-    public Personel(){
-        super();
-        this.setBirtdate(new Date(1997, 04, 24));
-    };
-
-
-    public Personel(String name, String surname, Date birthdate, boolean gender, String id,
-                     String nationality, int height, int weight, BloodType bloodType, String email, Proffesion Profession){
-
-        super(name, surname, birthdate,gender, id, nationality,  height, weight,  bloodType,  email);
-        this.proffesion = Profession;
+    @Override
+    public Personel createPersonel(Personel personel) {
+        personelList.add(personel);
+        return personel;
     }
 
-    // Getter and Setter
-
-    public Proffesion getProffesion(){
-        return this.proffesion;
+    @Override
+    public Personel getPersonelById(Long id) {
+        return personelList.stream()
+                .filter(p -> p.getId().equals(id))
+                .findFirst()
+                .orElse(null);
     }
 
-    public void setProffesion(Proffesion proffesion){
-        this.proffesion = proffesion;
+    @Override
+    public List<Personel> getAllPersonel() {
+        return personelList;
     }
 
+    @Override
+    public Personel updatePersonel(Long id, Personel personel) {
+        Personel existingPersonel = getPersonelById(id);
+        if (existingPersonel != null) {
+            existingPersonel.setName(personel.getName());
+            existingPersonel.setPosition(personel.getPosition());
+        }
+        return existingPersonel;
+    }
+
+    @Override
+    public void deletePersonel(Long id) {
+        personelList.removeIf(p -> p.getId().equals(id));
+    }
+
+    // Getters and Setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
 }
+
