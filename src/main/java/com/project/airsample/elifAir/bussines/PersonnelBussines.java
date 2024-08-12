@@ -3,9 +3,10 @@ package com.project.airsample.elifAir.bussines;
 import com.project.airsample.elifAir.Passenger;
 import com.project.airsample.elifAir.interfaces.IPersonnelBussines;
 import com.project.airsample.elifAir.managers.PassengerManager;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 public class PersonnelBussines extends PassengerManager implements IPersonnelBussines {
     public boolean getPassengerByLogic(int id, String city){
         //todo: apply logic
