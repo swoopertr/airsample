@@ -1,6 +1,8 @@
 package com.project.airsample.nebilAir.base;
 
-import com.project.airsample.sinanAir.interfaces.IHuman;
+
+
+import com.project.airsample.nebilAir.interfaces.IHuman;
 
 import java.util.Date;
 
