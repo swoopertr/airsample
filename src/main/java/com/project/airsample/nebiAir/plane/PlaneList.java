@@ -1,11 +1,10 @@
-package com.project.airsample.nebilAir.plane;
+package com.project.airsample.nebiAir.plane;
 
-import com.project.airsample.nebilAir.plane.Plane;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
-@Component("nebiPlanelist")
+@Component("nebiPlaneList")
 public class PlaneList {
     private ArrayList<Plane> planes = new ArrayList<Plane>();
 

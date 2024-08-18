@@ -1,7 +1,7 @@
 package com.project.airsample.controllers.nebiFlight;
 
-import com.project.airsample.nebilAir.airport.Airport;
-import com.project.airsample.nebilAir.airport.AirportList;
+import com.project.airsample.nebiAir.airport.Airport;
+import com.project.airsample.nebiAir.airport.AirportList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +11,19 @@ import org.springframework.web.bind.annotation.*;
 public class NebiAirPortController {
 
     @Autowired
+    @Qualifier("nebiAirport")
     private Airport nebiAirport;
 
     @Autowired
     @Qualifier("nebiAirPortList")
     private AirportList nebiAirportList;
+
+
+    // Get  airports schema
+    @GetMapping({"", "/"})
+    public Airport getAirport() {
+        return nebiAirport;
+    }
 
     // Get all airports
     @GetMapping("/list")

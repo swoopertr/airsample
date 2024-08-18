@@ -1,6 +1,5 @@
-package com.project.airsample.nebilAir.plane;
+package com.project.airsample.nebiAir.plane;
 
-import com.project.airsample.elifAir.enums.Manufacturer;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -9,7 +8,7 @@ import java.util.Date;
 public class Plane  {
 
     private String model;
-    private Manufacturer manufacturer;
+    private String manufacturer;
     private Date purchaseDate;
     private int businessCapacity;
     private int economyCapacity;
@@ -21,10 +20,20 @@ public class Plane  {
     private int aisleCount;
 
     public Plane() {
+        this.model = "Unknown Model";
+        this.manufacturer = "Unknown Manufacturer";
+        this.purchaseDate = new Date();
+        this.businessCapacity = 0;
+        this.economyCapacity = 0;
+        this.firstClassCapacity = 0;
+        this.premiumEconomyCapacity = 0;
+        this.doorCount = 0;
+        this.emergencyExitCount = 0;
+        this.aisleCount = 0;
         this.totalFlightTime = 0;
     }
 
-    public Plane(String model, Manufacturer manufacturer, Date purchaseDate, int businessCapacity,
+    public Plane(String model, String manufacturer, Date purchaseDate, int businessCapacity,
                  int economyCapacity, int firstClassCapacity, int premiumEconomyCapacity,
                  int doorCount, int emergencyExitCount, int aisleCount) {
         this.model = model;
@@ -49,11 +58,11 @@ public class Plane  {
         this.model = model;
     }
 
-    public Manufacturer getManufacturer() {
+    public String getManufacturer() {
         return manufacturer;
     }
 
-    public void setManufacturer(Manufacturer manufacturer) {
+    public void setManufacturer(String  manufacturer) {
         this.manufacturer = manufacturer;
     }
 

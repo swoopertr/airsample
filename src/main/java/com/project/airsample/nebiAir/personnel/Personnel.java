@@ -1,14 +1,23 @@
-package com.project.airsample.nebilAir.personnel;
+package com.project.airsample.nebiAir.personnel;
 
-import com.project.airsample.nebilAir.base.Human;
+import com.project.airsample.nebiAir.base.Human;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component("nebiPersonnel")
 public class Personnel extends Human {
     private String employeeId;
     private String department;
     private static List<Personnel> personnelList = new ArrayList<>();
+
+
+    public Personnel() {
+        this.employeeId = "Unknown Employee ID";
+        this.department = "Unknown Department";
+    }
+
 
     public String getEmployeeId() {
         return employeeId;

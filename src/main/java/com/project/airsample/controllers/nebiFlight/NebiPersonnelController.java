@@ -1,6 +1,9 @@
 package com.project.airsample.controllers.nebiFlight;
 
-import com.project.airsample.nebilAir.personnel.Personnel;
+import com.project.airsample.nebiAir.personnel.Personnel;
+import com.project.airsample.nebiAir.personnel.PersonnelList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,11 +12,28 @@ import java.util.List;
 @RequestMapping("/nebiAir/personnel")
 public class NebiPersonnelController {
 
+    @Autowired
+    @Qualifier("nebiPersonnel")
+    private Personnel nebiPersonnel;
+
+    @Autowired
+    @Qualifier("nebiPersonnelList")
+    private PersonnelList nebiPersonnelList;
+
+    //get schema
+    @GetMapping({"","/"})
+    public Personnel getPersonnel(){
+        return nebiPersonnel;
+    }
+
+
     // Get all personnel
     @GetMapping("/list")
-    public List<Personnel> getPersonnelList() {
-        return Personnel.getAllPersonnels();
+    public PersonnelList getPersonnels() {
+        return nebiPersonnelList;
     }
+
+
 
     // Get personnel by ID
     @GetMapping("/{id}")

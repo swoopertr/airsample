@@ -1,4 +1,4 @@
-package com.project.airsample.nebilAir.airport;
+package com.project.airsample.nebiAir.airport;
 
 import org.springframework.stereotype.Component;
 

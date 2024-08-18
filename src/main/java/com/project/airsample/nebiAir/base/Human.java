@@ -1,4 +1,4 @@
-package com.project.airsample.nebilAir.base;
+package com.project.airsample.nebiAir.base;
 
 import com.project.airsample.sinanAir.interfaces.IHuman;
 

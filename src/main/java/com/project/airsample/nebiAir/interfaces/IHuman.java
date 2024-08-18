@@ -1,4 +1,4 @@
-package com.project.airsample.nebilAir.interfaces;
+package com.project.airsample.nebiAir.interfaces;
 
 import java.util.Date;
 
