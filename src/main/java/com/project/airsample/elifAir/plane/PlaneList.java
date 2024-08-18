@@ -6,7 +6,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @Component("elifPlanelist")
-public class PlaneList {
+public class PlaneList implements IPlaneList {
     private ArrayList<Plane> planes = new ArrayList<Plane>();
 
     public ArrayList<Plane> getPlanes(){

@@ -1,71 +1,96 @@
 package com.project.airsample.airEgo.Classes.Ticket;
 
-public class Airport {
+import com.project.airsample.airEgo.Interfaces.IAirport;
+import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@Component("airportEgo")
+public class Airport implements IAirport {
+    private Long id;
     private String name;
-    private String city;
-    private String country;
-    private int code;
+    private String code;
 
-    //   private static Airport staticPort;
+    private static List<Airport> airportList = new ArrayList<>();
 
-    // Constructers
 
-    public Airport(){
-        name = "Not Set";
-        city = "Not Set";
-        country = "Not Set";
-        code = -1;
-    };
+    public Airport createAirport(Airport airport) {
+        airportList.add(airport);
+        return airport;
+    }
 
-    public Airport(String name, String city, String country, int code){
+    @Override
+    public com.project.airsample.sinanAir.airport.Airport createAirport(com.project.airsample.sinanAir.airport.Airport airport) {
+        return null;
+    }
 
+    @Override
+    public com.project.airsample.sinanAir.airport.Airport getAirportByIdEgo(Long id) {
+        return null;
+    }
+
+    @Override
+    public List<com.project.airsample.sinanAir.airport.Airport> getAllAirportsEgo() {
+        return List.of();
+    }
+
+
+    public Airport getAirportById(Long id) {
+        return airportList.stream()
+                .filter(a -> a.getId().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
+
+
+    public List<Airport> getAllAirports() {
+        return airportList;
+    }
+
+    @Override
+    public com.project.airsample.sinanAir.airport.Airport updateAirport(Long id, com.project.airsample.sinanAir.airport.Airport airport) {
+        return null;
+    }
+
+
+    public Airport updateAirport(Long id, Airport airport) {
+        Airport existingAirport = getAirportById(id);
+        if (existingAirport != null) {
+            existingAirport.setName(airport.getName());
+            existingAirport.setCode(airport.getCode());
+        }
+        return existingAirport;
+    }
+
+    @Override
+    public void deleteAirport(Long id) {
+        airportList.removeIf(a -> a.getId().equals(id));
+    }
+
+    // Getters and Setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
-        this.city = city;
-        this.country = country;
-        this.code = code;
-    };
-
-    //    public static Airport CreateAirPort(){
-//        return new Airport();
-//    }
-//    public static Airport CreateAirPortSingleton(){
-//        if(staticPort == null){
-//            staticPort = new Airport();
-//        }
-//        return staticPort;
-//    }
-// Getters and Setters
-    public String getName(){
-        return this.name;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public String getCode() {
+        return code;
     }
 
-    public String getCity () {
-        return this.city;
-    }
-    public void setCity (String city) {
-        this.city = city;
-    }
-
-    public String getCountry(){
-        return this.country;
-    }
-
-    public void setCountry (String country) {
-        this.country = country;
-    }
-
-    public int getCode(){
-        return this.code;
-    }
-
-    public void setCode(){
+    public void setCode(String code) {
         this.code = code;
     }
-
-
 }

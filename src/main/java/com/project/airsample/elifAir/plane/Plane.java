@@ -2,12 +2,13 @@ package com.project.airsample.elifAir.plane;
 
 import com.project.airsample.elifAir.airport.Airport;
 import com.project.airsample.elifAir.enums.Manufacturer;
+import org.springframework.boot.autoconfigure.couchbase.CouchbaseProperties;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
 @Component("elifPlane")
-public class Plane {
+public class Plane implements IPlane {
 
     private String model;
     private Manufacturer manufacturer;

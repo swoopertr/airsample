@@ -10,6 +10,12 @@ public class ElifHuman implements IAdvantageProgram{
     private String surname;
     private Date birthdate;
 
+    //constructor yazmamız gerekiyor. boş olabilir
+    public ElifHuman(){
+        this.name = "";
+        this.surname ="";
+        birthdate = new Date();
+    }
 
     public String getName() {
         return name;

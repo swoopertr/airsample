@@ -1,5 +1,6 @@
 package com.project.airsample.controllers.elifFlight;
 
+import com.project.airsample.elifAir.IPassenger;
 import com.project.airsample.elifAir.airport.AirPortList;
 import com.project.airsample.elifAir.airport.Airport;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,9 @@ import org.springframework.web.bind.annotation.*;
 
         @Autowired
         private Airport elifAirport;
+
+        @Autowired
+        private IPassenger passenger;
 
         @Autowired
         //aşağıda özel isimlendirdiğimiz component i çağırdık
