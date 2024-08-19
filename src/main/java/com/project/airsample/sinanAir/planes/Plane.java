@@ -1,10 +1,17 @@
 package com.project.airsample.sinanAir.planes;
 
+import com.project.airsample.sinanAir.interfaces.IPlane;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
-@Component("sinanPlane")
-public class Plane {
+import java.util.List;
+
+@Component("SinanPlane")
+public class Plane implements IPlane {
+
+
+    private int planeId;
     private String model;
     private Date purchaseDate;
     private int businessCapacity;
@@ -12,10 +19,15 @@ public class Plane {
 
     //CONSTRUCTOR
     public Plane(){
-        this.model = "BOEING";
-        this.purchaseDate = new Date(2024,6,6);
-        this.businessCapacity = 8;
-        this.economyCapacity = 90;
+
+    }
+
+    public int getPlaneId() {
+        return planeId;
+    }
+
+    public void setPlaneId(int planeId) {
+        this.planeId = planeId;
     }
 
     public String getModel() {
@@ -48,9 +60,33 @@ public class Plane {
         this.economyCapacity = economyCapacity;
     }
 
-    public void insert(Plane plane){
-        //todo : insert into db.
-        return;
+    @Override
+    public Plane getPlaneById(int planeId) {
+        //todo: db plane
+        return null;
     }
 
+    @Override
+    public List<Plane> getAllPlanes() {
+        //todo: db plane
+        return List.of();
+    }
+
+    @Override
+    public boolean addPlane(Plane plane) {
+        //todo: db plane
+        return false;
+    }
+
+    @Override
+    public boolean updatePlane(Plane plane) {
+        //todo: db plane
+        return false;
+    }
+
+    @Override
+    public boolean deletePlane(int planeId) {
+        //todo: db plane
+        return false;
+    }
 }
